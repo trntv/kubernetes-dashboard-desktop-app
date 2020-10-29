@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:frontend": "ng build --aot --prod --outputPath=dist",
-    "build:backend": "npm --prefix dashboard run build:backend && cp dashboard/dist/amd64 dist/amd64",
+    "start": "electron main.js",
+    "build:frontend": "ng build --aot --prod --outputPath=dist/dashboard",
+    "build:backend": "npm --prefix dashboard run build:backend && cp -r dashboard/dist/amd64 dist/amd64",
+    "build": "npm run build:backend && npm run build:frontend"
   },
   "author": "",
   "license": "ISC",
