@@ -4,12 +4,14 @@
   "main": "dist/main.js",
   "description": "It's an attempt to pack official [kubernetes dashboard](https://github.com/kubernetes/dashboard) in a single desktop app using [Electron](https://www.electronjs.org/)",
   "scripts": {
-    "postinstall": "npm --prefix dashboard install && npm --prefix src/renderer install",
+    "postinstall": "npm --prefix dashboard install; npm --prefix src/renderer install",
     "build:frontend": "npm --prefix src/renderer run build:frontend -- --outputPath=../../dist/frontend",
     "build:backend": "npm --prefix dashboard run build:backend && cp -r dashboard/dist/amd64 dist/amd64",
     "build:electron": "webpack",
+    "build": "npm build:backend && npm build:frontend && npm build:electron",
     "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "start": "electron dist/main.js"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
@@ -37,10 +39,10 @@
         "ignore": [
           "\\.tmp",
           "\\.idea",
-          "\/node_modules\/",
-          "\/src\/",
-          "\/dashboard\/",
-          "\/out\/"
+          "/node_modules/",
+          "/src/",
+          "/dashboard/",
+          "/out/"
         ],
         "icon": "./dist/assets/kubernetes-logo.icns"
       },
