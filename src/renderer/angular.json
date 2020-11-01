@@ -14,31 +14,31 @@
         },
         "locales": {
           "de": {
-            "translation": "dashboard/i18n/de/messages.de.xlf",
+            "translation": "../../dashboard/i18n/de/messages.de.xlf",
             "baseHref": ""
           },
           "fr": {
-            "translation": "dashboard/i18n/fr/messages.fr.xlf",
+            "translation": "../../dashboard/i18n/fr/messages.fr.xlf",
             "baseHref": ""
           },
           "ja": {
-            "translation": "dashboard/i18n/ja/messages.ja.xlf",
+            "translation": "../../dashboard/i18n/ja/messages.ja.xlf",
             "baseHref": ""
           },
           "ko": {
-            "translation": "dashboard/i18n/ko/messages.ko.xlf",
+            "translation": "../../dashboard/i18n/ko/messages.ko.xlf",
             "baseHref": ""
           },
           "zh-Hans": {
-            "translation": "dashboard/i18n/zh-Hans/messages.zh-Hans.xlf",
+            "translation": "../../dashboard/i18n/zh-Hans/messages.zh-Hans.xlf",
             "baseHref": ""
           },
           "zh-Hant": {
-            "translation": "dashboard/i18n/zh-Hant/messages.zh-Hant.xlf",
+            "translation": "../../dashboard/i18n/zh-Hant/messages.zh-Hant.xlf",
             "baseHref": ""
           },
           "zh-Hant-HK": {
-            "translation": "dashboard/i18n/zh-Hant-HK/messages.zh-Hant-HK.xlf",
+            "translation": "../../dashboard/i18n/zh-Hant-HK/messages.zh-Hant-HK.xlf",
             "baseHref": ""
           }
         }

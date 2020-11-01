@@ -1,21 +1,73 @@
 {
   "name": "kubernetes-dashboard-desktop-app",
   "version": "2.0.4",
+  "main": "dist/main.js",
   "description": "It's an attempt to pack official [kubernetes dashboard](https://github.com/kubernetes/dashboard) in a single desktop app using [Electron](https://www.electronjs.org/)",
-  "main": "index.js",
   "scripts": {
-    "postinstall": "npm --prefix dashboard install && npm --prefix apps/renderer install && npm --prefix apps/main install",
-    "build:renderer": "npm --prefix apps/renderer run build:frontend -- --outputPath=dist/renderer",
-    "build:backend": "npm --prefix dashboard run build:backend"
+    "postinstall": "npm --prefix dashboard install && npm --prefix src/renderer install",
+    "build:frontend": "npm --prefix src/renderer run build:frontend -- --outputPath=../../dist/frontend",
+    "build:backend": "npm --prefix dashboard run build:backend && cp -r dashboard/dist/amd64 dist/amd64",
+    "build:electron": "webpack",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
+    "copy-webpack-plugin": "^6.2.1",
+    "electron-prebuilt-compile": "^8.2.0",
+    "webpack-cli": "^4.1.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/trntv/kubernetes-dashboard-desktop-app.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Yevhen Terentiev",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/trntv/kubernetes-dashboard-desktop-app/issues"
   },
-  "homepage": "https://github.com/trntv/kubernetes-dashboard-desktop-app#readme"
+  "homepage": "https://github.com/trntv/kubernetes-dashboard-desktop-app#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "Kubernetes Dashboard",
+        "ignore": [
+          "\\.tmp",
+          "\\.idea",
+          "\/node_modules\/",
+          "\/src\/",
+          "\/dashboard\/",
+          "\/out\/"
+        ],
+        "icon": "./dist/assets/kubernetes-logo.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip"
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "Kubernetes Dashboard",
+            "icon": "./dist/assets/kubernetes-logo.icns"
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "trntv",
+              "name": "kubernetes-dashboard-desktop-app"
+            },
+            "prerelease": true
+          }
+        }
+      ]
+    }
+  }
 }
