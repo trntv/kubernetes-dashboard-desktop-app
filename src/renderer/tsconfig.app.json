@@ -2,16 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "out-tsc/app",
-    "baseUrl": "dashboard/src/app/frontend",
+    "baseUrl": "../../dashboard/src/app/frontend",
     "target": "es5",
     "types": ["node"]
   },
   "include": [
-    "dashboard/src/app/frontend/**/*",
-    "src/app/electron/**/*"
+    "../../dashboard/src/app/frontend/**/*",
+    "src/**/*"
   ],
   "exclude": [
-    "dashboard/src/app/frontend/**/*.spec.ts"
+    "../../dashboard/src/app/frontend/**/*.spec.ts"
   ],
   "lib": ["es2017", "dom"]
 }

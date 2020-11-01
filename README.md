@@ -3,8 +3,9 @@ It's an attempt to pack official [kubernetes dashboard](https://github.com/kuber
 
 The project is still in the PoC stage as I'm looking for the best way to add needed modifications to the base app without changing its source code.
 
-## Run
+## Build & Run
 ```
+npm install
 npm run build
 npm start
 ```

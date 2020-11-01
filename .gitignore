@@ -1,3 +1,4 @@
-.tmp
-dist
-node_modules
+.tmp/
+dist/
+out/
+node_modules/

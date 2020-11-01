@@ -2,13 +2,14 @@ const { app, BrowserWindow } = require('electron')
 const url = require("url");
 const path = require("path");
 const childProcess = require("child_process");
-const net = require("net");
+
+let debug = process.argv.includes("--debug")
 
 function runBackend () {
-    const binPath = path.join(__dirname, "dist/amd64/dashboard")
+    const binPath = path.join(__dirname, 'amd64/dashboard')
     childProcess.exec(`"${binPath}" --kubeconfig ~/.kube/config`, (error, stdout, stderr) => {
         if (error) {
-            console.error(error)
+            console.error(error, stderr)
         }
     })
 }
@@ -18,7 +19,7 @@ function createWindow() {
     let win = new BrowserWindow({
         width: 1280,
         height: 1024,
-        icon: path.join(__dirname, 'dist/frontend/assets/images/kubernetes-logo.png'),
+        icon: path.join(__dirname, 'assets/kubernetes-logo.png'),
         webPreferences: {
             nodeIntegration: true
         }
@@ -27,14 +28,17 @@ function createWindow() {
     // and load the index.html of the app.
     win.loadURL(
         url.format({
-            pathname: path.join(__dirname, `dist/frontend/index.html`),
+            pathname: path.join(__dirname, 'frontend/index.html'),
             protocol: "file:",
             slashes: true
         })
     ).catch((e) => {
         console.log(e)
     });
-    win.webContents.openDevTools()
+
+    if (debug) {
+        win.webContents.openDevTools()
+    }
 
     win.on('closed', function () {
         win = null
