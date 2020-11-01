@@ -49,26 +49,21 @@
           "options": {
             "aot": true,
             "outputPath": ".tmp/electron",
-            "index": "dashboard/src/app/frontend/index.html",
-            "main": "src/app/electron/index.ts",
+            "index": "../../dashboard/src/app/frontend/index.html",
+            "main": "src/index.ts",
             "tsConfig": "./tsconfig.app.json",
-            "polyfills": "dashboard/src/app/frontend/polyfills.ts",
+            "polyfills": "../../dashboard/src/app/frontend/polyfills.ts",
             "i18nMissingTranslation": "error",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "dashboard/src/app/frontend/assets",
+                "input": "../../dashboard/src/app/frontend/assets",
                 "output": "/assets"
               },
               {
                 "glob": "**/*",
-                "input": "src/dashboard/node_modules/ace-builds/src-noconflict",
+                "input": "../../dashboard/node_modules/ace-builds/src-noconflict",
                 "output": "/ace"
-              },
-              {
-                "glob": "**/*",
-                "input": "electron.js",
-                "output": "electron.js"
               }
             ],
             "styles": [
@@ -77,7 +72,7 @@
               "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
               "node_modules/xterm/css/xterm.css",
               "node_modules/c3/c3.min.css",
-              "dashboard/src/app/frontend/index.scss"
+              "../../dashboard/src/app/frontend/index.scss"
             ],
             "scripts": [
               "node_modules/sockjs-client/dist/sockjs.min.js",
@@ -105,8 +100,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "dashboard/src/app/frontend/environments/environment.ts",
-                  "with": "dashboard/src/app/frontend/environments/environment.prod.ts"
+                  "replace": "../../dashboard/src/app/frontend/environments/environment.ts",
+                  "with": "../../dashboard/src/app/frontend/environments/environment.prod.ts"
                 }
               ]
             }
