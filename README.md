@@ -3,6 +3,8 @@ It's an attempt to pack official [kubernetes dashboard](https://github.com/kuber
 
 The project is still in the PoC stage as I'm looking for the best way to add needed modifications to the base app without changing its source code.
 
+![Kubernetes Dashboard Desktop App](screenshot.png?raw=true "Kubernetes Dashboard Desktop App")
+
 ## Build & Run
 ```
 npm install
