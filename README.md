@@ -15,5 +15,5 @@ npm start
 ## MacOS installation
 ```
 brew tap trntv/kubernetes-dashboard-desktop-app
-brew cask install trntv/kubernetes-dashboard-desktop-app/kubernetes-dashboard-desktop-app
+brew install --cask trntv/kubernetes-dashboard-desktop-app/kubernetes-dashboard-desktop-app
 ```
