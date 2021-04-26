@@ -1,0 +1,33 @@
+# This is a taskctl's tasks configuration file.
+# More information at https://github.com/taskctl/taskctl
+pipelines:
+  start:
+    - task: install
+    - task: build
+    - task: start
+  
+  publish:
+    - task: install
+    - task: build
+    - task: publish
+  
+tasks:
+  install:
+    command:
+      - npm install
+      - npm --prefix src/renderer ci
+  
+  build:
+    command:
+      - npm run build:backend
+      - npm run build:frontend
+      - npm run build:electron
+
+  publish:
+    command:
+      - npm run make
+      - npm run publish
+      
+  start:
+    command:
+      - npm run start

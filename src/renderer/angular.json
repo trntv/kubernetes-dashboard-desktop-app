@@ -66,6 +66,11 @@
                 "output": "/ace"
               }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "../../dashboard/src/app/frontend"
+              ]
+            },
             "styles": [
               "node_modules/highlight.js/styles/github.css",
               "node_modules/material-design-icons/iconfont/material-icons.css",
@@ -92,9 +97,8 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
+              "localize": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
