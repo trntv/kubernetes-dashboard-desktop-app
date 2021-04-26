@@ -4,8 +4,8 @@
   "description": "It's an attempt to pack official [kubernetes dashboard](https://github.com/kubernetes/dashboard) in a single desktop app using [Electron](https://www.electronjs.org/)",
   "scripts": {
     "build": "webpack",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
+    "make": "cp -f -R ../../dist . && electron-forge make",
+    "publish": "cp -f -R ../../dist . && electron-forge publish",
     "start": "electron ../../dist/main.js --debug"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
           "/apps/",
           "/out/"
         ],
-        "icon": "./../../dist/assets/kubernetes-logo.icns"
+        "icon": "./dist/assets/kubernetes-logo.icns"
       },
       "makers": [
         {
@@ -48,7 +48,8 @@
           "name": "@electron-forge/maker-dmg",
           "config": {
             "name": "Kubernetes Dashboard",
-            "icon": "./../../dist/assets/kubernetes-logo.icns"
+            "icon": "./dist/assets/kubernetes-logo.icns",
+            "platforms": ["darwin", "darwin-arm64"]
           }
         }
       ],

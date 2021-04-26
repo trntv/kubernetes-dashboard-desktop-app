@@ -8,7 +8,7 @@ let debug = process.argv.includes("--debug")
 
 function runBackend () {
     console.debug("starting backend...")
-    const binPath = path.join(__dirname, 'dashboard')
+    const binPath = path.join(__dirname, '../dist/dashboard')
     childProcess.exec(`"${binPath}" --kubeconfig ~/.kube/config`, (error, stdout, stderr) => {
         console.log(error, stderr)
         if (error) {
@@ -22,7 +22,7 @@ function createWindow() {
     // Create the browser window.
     let win = new BrowserWindow({
         show: false,
-        icon: path.join(__dirname, 'assets/kubernetes-logo.png'),
+        icon: path.join(__dirname, '../dist/assets/kubernetes-logo.png'),
         webPreferences: {
             nodeIntegration: true
         }
@@ -33,7 +33,7 @@ function createWindow() {
     // and load the index.html of the app.
     win.loadURL(
         url.format({
-            pathname: path.join(__dirname, 'renderer/index.html'),
+            pathname: path.join(__dirname, '../dist/renderer/index.html'),
             protocol: "file:",
             slashes: true
         })
