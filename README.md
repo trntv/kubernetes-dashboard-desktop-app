@@ -14,7 +14,9 @@ The project is still in the PoC stage as I'm looking for the best way to add nee
 brew tap trntv/kubernetes-dashboard-desktop-app
 brew install --cask trntv/kubernetes-dashboard-desktop-app/kubernetes-dashboard-desktop-app
 ```
-then navigate to `System Preferences` -> `Security & Privacy` and allow `Kubernetes Dashboard.app`
+or download `dmg` from latest [release](https://github.com/trntv/kubernetes-dashboard-desktop-app/releases/latest)
+
+then navigate to `System Preferences` -> `Security & Privacy` and allow `Kubernetes Dashboard.app` to open
 
 ## Build & Run from sources
 clone
