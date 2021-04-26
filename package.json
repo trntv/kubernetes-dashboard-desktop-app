@@ -9,7 +9,7 @@
     "build:electron": "webpack",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "start": "electron dist/main.js"
+    "start": "electron dist/main.js --debug"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",

@@ -6,7 +6,7 @@ The project is still in the PoC stage as I'm looking for the best way to add nee
 ![Kubernetes Dashboard Desktop App](screenshot.png?raw=true "Kubernetes Dashboard Desktop App")
 
 ## Requirements
-1. ``kubectl`` should be installed and configured
+1. `KUBECONFIG` should be configured
 2. Context to desired cluster should be set
 
 ## MacOS installation

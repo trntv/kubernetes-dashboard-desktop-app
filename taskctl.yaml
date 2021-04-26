@@ -4,17 +4,22 @@ pipelines:
   start:
     - task: install
     - task: build
+      depends_on: install
     - task: start
+      depends_on: build
   
   publish:
     - task: install
     - task: build
+      depends_on: install
     - task: publish
+      depends_on: build
   
 tasks:
   install:
     command:
       - npm install
+      - npm --prefix dashboard ci
       - npm --prefix src/renderer ci
   
   build:
@@ -30,4 +35,5 @@ tasks:
       
   start:
     command:
+      - npm run build:electron
       - npm run start

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Kubernetes Dashboard desktop app",
   "scripts": {
-    "build:frontend": "ng build --aot --prod"
+    "build:frontend": "ng build --prod"
   },
   "author": "Yevhen Terentiev",
   "license": "Apache-2.0",
