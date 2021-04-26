@@ -19,11 +19,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {AngularPageVisibilityModule} from 'angular-page-visibility';
-import {ChromeModule} from '../../../dashboard/src/app/frontend/chrome/module';
-import {CoreModule} from '../../../dashboard/src/app/frontend/core.module';
-import {GlobalErrorHandler} from '../../../dashboard/src/app/frontend/error/handler';
-import {routes} from '../../../dashboard/src/app/frontend/index.routing';
-import {LoginModule} from '../../../dashboard/src/app/frontend/login/module';
+import {ChromeModule} from '@kubernetes/dashboard/src/app/frontend/chrome/module';
+import {CoreModule} from '@kubernetes/dashboard/src/app/frontend/core.module';
+import {GlobalErrorHandler} from '@kubernetes/dashboard/src/app/frontend/error/handler';
+import {routes} from '@kubernetes/dashboard/src/app/frontend/index.routing';
+import {LoginModule} from '@kubernetes/dashboard/src/app/frontend/login/module';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import { ElectronBaseUrlInterceptor } from "./interceptor/interceptor.module";
 

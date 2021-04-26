@@ -1,0 +1,50 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "angularCompilerOptions": {
+    "annotationsAs": "static fields",
+    "annotateForClosureCompiler": true
+  },
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "",
+    "paths": {
+      "@api/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/typings/*"],
+      "about/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/about/*"],
+      "assets/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/assets/*"],
+      "chrome/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/chrome/*"],
+      "common/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/common/*"],
+      "crd/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/crd/*"],
+      "create/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/create/*"],
+      "environments/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/environments/*"],
+      "error/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/error/*"],
+      "login/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/login/*"],
+      "logs/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/logs/*"],
+      "overview/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/overview/*"],
+      "plugin/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/plugin/*"],
+      "resource/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/resource/*"],
+      "search/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/search/*"],
+      "settings/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/settings/*"],
+      "shell/*": ["./node_modules/@kubernetes/dashboard/src/app/frontend/shell/*"],
+      "typings/*":  ["./node_modules/@kubernetes/dashboard/src/app/frontend/typings/*"]
+    },
+    "outDir": ".tmp/out-tsc",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@kubernetes/dashboard/src/app/frontend/typings"
+    ]
+  }
+}

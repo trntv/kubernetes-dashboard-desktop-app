@@ -18,22 +18,25 @@ pipelines:
 tasks:
   install:
     command:
-      - npm install
-      - npm --prefix dashboard ci
-      - npm --prefix src/renderer ci
+      - npm --prefix apps/electron install
+      - npm --prefix apps/renderer ci --ignore-scripts
   
   build:
     command:
-      - npm run build:backend
-      - npm run build:frontend
-      - npm run build:electron
+      - npm run --prefix apps/renderer version
+      - npm run --prefix apps/renderer build:frontend
+      - npm run --prefix apps/renderer build:backend
+      - npm run --prefix apps/electron build
 
   publish:
     command:
-      - npm run make
-      - npm run publish
-      
+      - npm run --prefix apps/electron make
+      - npm run --prefix apps/electron publish
+    env_file: .envrc
+  
   start:
     command:
-      - npm run build:electron
-      - npm run start
+      - npm run --prefix apps/electron build
+      - npm run --prefix apps/electron start
+
+output: raw

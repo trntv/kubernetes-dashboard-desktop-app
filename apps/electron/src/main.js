@@ -8,8 +8,9 @@ let debug = process.argv.includes("--debug")
 
 function runBackend () {
     console.debug("starting backend...")
-    const binPath = path.join(__dirname, 'amd64/dashboard')
+    const binPath = path.join(__dirname, 'dashboard')
     childProcess.exec(`"${binPath}" --kubeconfig ~/.kube/config`, (error, stdout, stderr) => {
+        console.log(error, stderr)
         if (error) {
             console.error(error, stderr)
             throw error
@@ -32,7 +33,7 @@ function createWindow() {
     // and load the index.html of the app.
     win.loadURL(
         url.format({
-            pathname: path.join(__dirname, 'frontend/index.html'),
+            pathname: path.join(__dirname, 'renderer/index.html'),
             protocol: "file:",
             slashes: true
         })

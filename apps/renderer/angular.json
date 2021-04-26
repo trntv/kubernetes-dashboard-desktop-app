@@ -18,27 +18,27 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": ".tmp/electron",
-            "index": "../../dashboard/src/app/frontend/index.html",
+            "outputPath": "../../dist/renderer",
+            "index": "node_modules/@kubernetes/dashboard/src/app/frontend/index.html",
             "main": "src/index.ts",
             "tsConfig": "./tsconfig.app.json",
-            "polyfills": "../../dashboard/src/app/frontend/polyfills.ts",
+            "polyfills": "node_modules/@kubernetes/dashboard/src/app/frontend/polyfills.ts",
             "i18nMissingTranslation": "error",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "../../dashboard/src/app/frontend/assets",
+                "input": "node_modules/@kubernetes/dashboard/src/app/frontend/assets",
                 "output": "/assets"
               },
               {
                 "glob": "**/*",
-                "input": "../../dashboard/node_modules/ace-builds/src-noconflict",
+                "input": "node_modules/@kubernetes/dashboard/node_modules/ace-builds/src-noconflict",
                 "output": "/ace"
               }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "../../dashboard/src/app/frontend"
+                "node_modules/@kubernetes/dashboard/src/app/frontend"
               ]
             },
             "styles": [
@@ -47,7 +47,7 @@
               "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
               "node_modules/xterm/css/xterm.css",
               "node_modules/c3/c3.min.css",
-              "../../dashboard/src/app/frontend/index.scss"
+              "node_modules/@kubernetes/dashboard/src/app/frontend/index.scss"
             ],
             "scripts": [
               "node_modules/sockjs-client/dist/sockjs.min.js",
@@ -74,8 +74,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "../../dashboard/src/app/frontend/environments/environment.ts",
-                  "with": "../../dashboard/src/app/frontend/environments/environment.prod.ts"
+                  "replace": "node_modules/@kubernetes/dashboard/src/app/frontend/environments/environment.ts",
+                  "with": "node_modules/@kubernetes/dashboard/src/app/frontend/environments/environment.prod.ts"
                 }
               ]
             }

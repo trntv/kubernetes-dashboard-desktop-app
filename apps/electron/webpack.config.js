@@ -4,17 +4,17 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode: 'none',
     target: 'electron-main',
-    entry: './src/main/main.js',
+    entry: './src/main.js',
     node: {
         __dirname: false
     },
     output: {
-        path: path.join(__dirname, "./dist")
+        path: path.join(__dirname, "./../../dist")
     },
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from: 'src/main/assets', to: 'assets' },
+                { from: './src/assets', to: 'assets' },
             ],
         }),
     ]

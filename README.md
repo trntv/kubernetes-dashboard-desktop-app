@@ -6,8 +6,8 @@ The project is still in the PoC stage as I'm looking for the best way to add nee
 ![Kubernetes Dashboard Desktop App](screenshot.png?raw=true "Kubernetes Dashboard Desktop App")
 
 ## Requirements
-1. `KUBECONFIG` should be configured
-2. Context to desired cluster should be set
+1. `.kube/config` should exist and configured
+2. context to desired cluster should be set
 
 ## MacOS installation
 ```
@@ -27,8 +27,11 @@ taskctl start
 ```
 or run with [npm](https://npmjs.org)
 ```
-npm install
-npm --prefix src/renderer ci
-npm run build:backend
-npm run build:frontend
+npm --prefix apps/electron install
+npm --prefix apps/renderer ci --ignore-scripts
+npm --prefix apps/renderer run version
+npm --prefix apps/renderer run build:frontend
+npm --prefix apps/renderer run build:backend
+npm --prefix apps/electron run build
+npm --prefix apps/electron run start
 ```

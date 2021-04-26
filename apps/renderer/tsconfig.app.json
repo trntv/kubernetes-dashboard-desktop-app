@@ -2,16 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "out-tsc/app",
-    "baseUrl": "../../dashboard/src/app/frontend",
+    "baseUrl": "",
     "target": "es5",
     "types": ["node"]
   },
   "include": [
-    "../../dashboard/src/app/frontend/**/*",
+    "node_modules/@kubernetes/dashboard/src/app/frontend/**/*",
     "src/**/*"
   ],
   "exclude": [
-    "../../dashboard/src/app/frontend/**/*.spec.ts"
+    "node_modules/@kubernetes/dashboard/src/app/frontend/**/*.spec.ts"
   ],
   "lib": ["es2017", "dom"]
 }

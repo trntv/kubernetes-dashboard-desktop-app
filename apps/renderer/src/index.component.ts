@@ -15,9 +15,9 @@
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {Component, ElementRef, OnInit} from '@angular/core';
 
-import {LocalSettingsService} from '../../../dashboard/src/app/frontend/common/services/global/localsettings';
-import {ThemeService} from '../../../dashboard/src/app/frontend/common/services/global/theme';
-import {TitleService} from '../../../dashboard/src/app/frontend/common/services/global/title';
+import {LocalSettingsService} from '@kubernetes/dashboard/src/app/frontend/common/services/global/localsettings';
+import {ThemeService} from '@kubernetes/dashboard/src/app/frontend/common/services/global/theme';
+import {TitleService} from '@kubernetes/dashboard/src/app/frontend/common/services/global/title';
 
 @Component({selector: 'kd-root', template: '<router-outlet></router-outlet>'})
 export class RootComponent implements OnInit {

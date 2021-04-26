@@ -1,9 +1,10 @@
 {
-  "name": "kubernetes-dashboard-desktop-app",
-  "version": "1.0.0",
-  "description": "Kubernetes Dashboard desktop app",
+  "version": "2.2.0",
+  "description": "Kubernetes Dashboard Desktop App",
   "scripts": {
-    "build:frontend": "ng build --prod"
+    "version": "node node_modules/@kubernetes/dashboard/aio/scripts/version.js",
+    "build:frontend": "ng build --aot --prod",
+    "build:backend": "cd node_modules/@kubernetes/dashboard/src/app/backend && go build -ldflags \"-X github.com/kubernetes/dashboard/src/app/backend/client.Version=$npm_package_version\" -gcflags=\"all=-N -l\" -o $INIT_CWD/../../dist/dashboard github.com/kubernetes/dashboard/src/app/backend"
   },
   "author": "Yevhen Terentiev",
   "license": "Apache-2.0",
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "11.0.6",
     "@angular/platform-browser-dynamic": "11.0.6",
     "@angular/router": "11.0.6",
+    "@kubernetes/dashboard": "kubernetes/dashboard#v2.2.0",
     "@swimlane/ngx-charts": "16.0.0",
     "@types/c3": "0.7.5",
     "@types/d3": "6.2.0",

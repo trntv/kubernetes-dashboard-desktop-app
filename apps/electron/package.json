@@ -1,15 +1,12 @@
 {
-  "name": "kubernetes-dashboard-desktop-app",
   "version": "2.2.0",
-  "main": "dist/main.js",
+  "main": "src/main.js",
   "description": "It's an attempt to pack official [kubernetes dashboard](https://github.com/kubernetes/dashboard) in a single desktop app using [Electron](https://www.electronjs.org/)",
   "scripts": {
-    "build:frontend": "npm --prefix src/renderer run build:frontend -- --outputPath=../../dist/frontend",
-    "build:backend": "npm --prefix dashboard run build:backend && cp -r dashboard/dist/amd64 dist/amd64",
-    "build:electron": "webpack",
+    "build": "webpack",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "start": "electron dist/main.js --debug"
+    "start": "electron ../../dist/main.js --debug"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
@@ -38,11 +35,10 @@
           "\\.tmp",
           "\\.idea",
           "/node_modules/",
-          "/src/",
-          "/dashboard/",
+          "/apps/",
           "/out/"
         ],
-        "icon": "./dist/assets/kubernetes-logo.icns"
+        "icon": "./../../dist/assets/kubernetes-logo.icns"
       },
       "makers": [
         {
@@ -52,7 +48,7 @@
           "name": "@electron-forge/maker-dmg",
           "config": {
             "name": "Kubernetes Dashboard",
-            "icon": "./dist/assets/kubernetes-logo.icns"
+            "icon": "./../../dist/assets/kubernetes-logo.icns"
           }
         }
       ],
